@@ -1,3 +1,6 @@
+// Above the createApp() line
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
@@ -22,6 +25,9 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
 
 const app = createApp(App)
   .use(IonicVue)
